@@ -1,7 +1,7 @@
 //* Components Imports
 import LoginForm from "./_components/login-form"
 
-export default function page() {
+export default function Page() {
   return (
     <LoginForm />
   )

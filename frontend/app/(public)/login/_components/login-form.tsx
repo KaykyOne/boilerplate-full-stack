@@ -1,7 +1,7 @@
 "use client"
 
 //* Components Imports
-import Button from "@/components/ui/button"
+import Button, { buttonVariants } from "@/components/ui/button"
 import Input from "@/components/ui/input"
 import Card from "@/components/ui/card"
 
@@ -29,9 +29,9 @@ export default function LoginForm() {
                     <Button variant="foreground">
                         Entrar
                     </Button>
-                    <Button variant="foreground">
+                    <Link href="/select-sign-up" className={buttonVariants({ variant: "foreground" })}>
                         Cadastrar
-                    </Button>
+                    </Link>
                 </div>
             </Card.CardContent>
             <Card.CardDescription>
