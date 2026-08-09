@@ -1,4 +1,4 @@
-//* Libraries Imports 
+//* Libraries Imports
 import { redirect } from "next/navigation";
 
 export default function Home() {
