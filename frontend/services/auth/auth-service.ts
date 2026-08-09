@@ -1,11 +1,8 @@
-//* Utils Imports
+//* Libraries Imports
 import http from "@/lib/http";
 
 //* Types Imports
 import type { UserType } from "@/schemas/user";
-
-// //* Schemas Imports
-// import { userSchema } from "@/schemas/user";
 
 export type LoginPayload = {
     email: string;

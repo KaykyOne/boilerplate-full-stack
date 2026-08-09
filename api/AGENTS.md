@@ -1,0 +1,1 @@
+Ler todas as skills antes de escrever qualquer código.

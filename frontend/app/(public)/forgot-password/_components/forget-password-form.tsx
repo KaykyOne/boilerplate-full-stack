@@ -1,11 +1,11 @@
 //* Components Imports
-import Input from "@/components/ui/input"
-import Card from "@/components/ui/card"
-import Button from "@/components/ui/button"
+import Button from "@/components/ui/button";
+import Card from "@/components/ui/card";
+import Input from "@/components/ui/input";
 
 //* Libraries Imports
-import Link from "next/link"
-import { ShieldLockIcon } from "lucide-react"
+import { ShieldLockIcon } from "lucide-react";
+import Link from "next/link";
 
 export default function ForgotPasswordForm() {
   return (

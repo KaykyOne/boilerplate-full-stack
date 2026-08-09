@@ -1,4 +1,5 @@
-import { ReactNode } from "react"
+//* Libraries Imports
+import { type ReactNode } from "react";
 
 export default function layout({ children }: { children: ReactNode }) {
     return (

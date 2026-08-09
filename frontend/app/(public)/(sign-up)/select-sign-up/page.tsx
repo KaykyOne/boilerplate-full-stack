@@ -1,13 +1,13 @@
-//* Constants Imports
-import roles from "@/constants/roles"
-
 //* Components Imports
-import CardRole from "./_components/card-role"
-import { buttonVariants } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button";
+import CardRole from "./_components/card-role";
 
 //* Libraries Imports
-import { MousePointerClickIcon, CornerDownLeftIcon } from "lucide-react"
-import Link from "next/link"
+import { CornerDownLeftIcon, MousePointerClickIcon } from "lucide-react";
+import Link from "next/link";
+
+//* Constants Imports
+import roles from "@/constants/roles";
 
 export default function Page() {
     return (

@@ -1,8 +1,8 @@
-//* Types Imports
-import { type RoleType } from "@/schemas/role"
-
 //* Components Imports
-import Card from "@/components/ui/card"
+import Card from "@/components/ui/card";
+
+//* Types Imports
+import type { RoleType } from "@/schemas/role";
 
 type propsCardRole = {
     role: RoleType
