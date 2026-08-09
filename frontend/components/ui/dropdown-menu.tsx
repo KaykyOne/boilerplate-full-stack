@@ -6,7 +6,7 @@ import { Menu as MenuPrimitive } from "@base-ui/react/menu"
 import { cn } from "@/lib/utils"
 import { ChevronRightIcon, CheckIcon } from "lucide-react"
 
-function DropdownMenu({ ...props }: MenuPrimitive.Root.Props) {
+function DropdownMenuRoot({ ...props }: MenuPrimitive.Root.Props) {
   return <MenuPrimitive.Root data-slot="dropdown-menu" {...props} />
 }
 
@@ -250,7 +250,7 @@ function DropdownMenuShortcut({
 }
 
 export {
-  DropdownMenu,
+  DropdownMenuRoot,
   DropdownMenuPortal,
   DropdownMenuTrigger,
   DropdownMenuContent,
@@ -264,5 +264,25 @@ export {
   DropdownMenuShortcut,
   DropdownMenuSub,
   DropdownMenuSubTrigger,
-  DropdownMenuSubContent,
+  DropdownMenuSubContent
 }
+
+const DropdownMenu = {
+  DropdownMenuRoot,
+  DropdownMenuPortal,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuLabel,
+  DropdownMenuItem,
+  DropdownMenuCheckboxItem,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubTrigger,
+  DropdownMenuSubContent
+}
+
+export default DropdownMenu

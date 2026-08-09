@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils"
 import { Button, buttonVariants } from "@/components/ui/button"
 import { ChevronLeftIcon, ChevronRightIcon, ChevronDownIcon } from "lucide-react"
 
-function Calendar({
+function CalendarRoot({
   className,
   classNames,
   showOutsideDays = true,
@@ -218,4 +218,14 @@ function CalendarDayButton({
   )
 }
 
-export { Calendar, CalendarDayButton }
+export {
+  CalendarRoot,
+  CalendarDayButton
+}
+
+const Calendar = {
+  CalendarRoot,
+  CalendarDayButton
+}
+
+export default Calendar

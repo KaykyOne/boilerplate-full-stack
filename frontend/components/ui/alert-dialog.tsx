@@ -6,7 +6,7 @@ import { AlertDialog as AlertDialogPrimitive } from "@base-ui/react/alert-dialog
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 
-function AlertDialog({ ...props }: AlertDialogPrimitive.Root.Props) {
+function AlertDialogRoot({ ...props }: AlertDialogPrimitive.Root.Props) {
   return <AlertDialogPrimitive.Root data-slot="alert-dialog" {...props} />
 }
 
@@ -172,7 +172,7 @@ function AlertDialogCancel({
 }
 
 export {
-  AlertDialog,
+  AlertDialogRoot,
   AlertDialogAction,
   AlertDialogCancel,
   AlertDialogContent,
@@ -183,5 +183,22 @@ export {
   AlertDialogOverlay,
   AlertDialogPortal,
   AlertDialogTitle,
-  AlertDialogTrigger,
+  AlertDialogTrigger
 }
+
+const AlertDialog = {
+  AlertDialogRoot,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogMedia,
+  AlertDialogOverlay,
+  AlertDialogPortal,
+  AlertDialogTitle,
+  AlertDialogTrigger
+}
+
+export default AlertDialog

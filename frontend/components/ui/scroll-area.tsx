@@ -5,7 +5,7 @@ import { ScrollArea as ScrollAreaPrimitive } from "@base-ui/react/scroll-area"
 
 import { cn } from "@/lib/utils"
 
-function ScrollArea({
+function ScrollAreaRoot({
   className,
   children,
   ...props
@@ -52,4 +52,14 @@ function ScrollBar({
   )
 }
 
-export { ScrollArea, ScrollBar }
+export {
+  ScrollAreaRoot,
+  ScrollBar
+}
+
+const ScrollArea = {
+  ScrollAreaRoot,
+  ScrollBar
+}
+
+export default ScrollArea

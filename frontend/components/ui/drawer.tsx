@@ -24,7 +24,7 @@ function useDrawer() {
   return context
 }
 
-function Drawer({
+function DrawerRoot({
   modal = true,
   showSwipeHandle = false,
   snapPoints,
@@ -214,7 +214,7 @@ function DrawerDescription({
 }
 
 export {
-  Drawer,
+  DrawerRoot,
   DrawerPortal,
   DrawerOverlay,
   DrawerSwipeHandle,
@@ -224,5 +224,21 @@ export {
   DrawerHeader,
   DrawerFooter,
   DrawerTitle,
-  DrawerDescription,
+  DrawerDescription
 }
+
+const Drawer = {
+  DrawerRoot,
+  DrawerPortal,
+  DrawerOverlay,
+  DrawerSwipeHandle,
+  DrawerTrigger,
+  DrawerClose,
+  DrawerContent,
+  DrawerHeader,
+  DrawerFooter,
+  DrawerTitle,
+  DrawerDescription
+}
+
+export default Drawer

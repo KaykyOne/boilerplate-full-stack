@@ -5,7 +5,7 @@ import { Avatar as AvatarPrimitive } from "@base-ui/react/avatar"
 
 import { cn } from "@/lib/utils"
 
-function Avatar({
+function AvatarRoot({
   className,
   size = "default",
   ...props
@@ -100,10 +100,21 @@ function AvatarGroupCount({
 }
 
 export {
-  Avatar,
+  AvatarRoot,
   AvatarImage,
   AvatarFallback,
   AvatarGroup,
   AvatarGroupCount,
-  AvatarBadge,
+  AvatarBadge
 }
+
+const Avatar = {
+  AvatarRoot,
+  AvatarImage,
+  AvatarFallback,
+  AvatarGroup,
+  AvatarGroupCount,
+  AvatarBadge
+}
+
+export default Avatar

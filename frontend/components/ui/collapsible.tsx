@@ -2,7 +2,7 @@
 
 import { Collapsible as CollapsiblePrimitive } from "@base-ui/react/collapsible"
 
-function Collapsible({ ...props }: CollapsiblePrimitive.Root.Props) {
+function CollapsibleRoot({ ...props }: CollapsiblePrimitive.Root.Props) {
   return <CollapsiblePrimitive.Root data-slot="collapsible" {...props} />
 }
 
@@ -18,4 +18,16 @@ function CollapsibleContent({ ...props }: CollapsiblePrimitive.Panel.Props) {
   )
 }
 
-export { Collapsible, CollapsibleTrigger, CollapsibleContent }
+export {
+  CollapsibleRoot,
+  CollapsibleTrigger,
+  CollapsibleContent
+}
+
+const Collapsible = {
+  CollapsibleRoot,
+  CollapsibleTrigger,
+  CollapsibleContent
+}
+
+export default Collapsible

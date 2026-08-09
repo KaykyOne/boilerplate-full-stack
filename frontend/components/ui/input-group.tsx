@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 
-function InputGroup({ className, ...props }: React.ComponentProps<"div">) {
+function InputGroupRoot({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="input-group"
@@ -149,10 +149,21 @@ function InputGroupTextarea({
 }
 
 export {
-  InputGroup,
+  InputGroupRoot,
   InputGroupAddon,
   InputGroupButton,
   InputGroupText,
   InputGroupInput,
-  InputGroupTextarea,
+  InputGroupTextarea
 }
+
+const InputGroup = {
+  InputGroupRoot,
+  InputGroupAddon,
+  InputGroupButton,
+  InputGroupText,
+  InputGroupInput,
+  InputGroupTextarea
+}
+
+export default InputGroup

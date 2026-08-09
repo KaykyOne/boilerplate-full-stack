@@ -17,7 +17,7 @@ import {
 } from "@/components/ui/input-group"
 import { SearchIcon, CheckIcon } from "lucide-react"
 
-function Command({
+function CommandRoot({
   className,
   ...props
 }: React.ComponentProps<typeof CommandPrimitive>) {
@@ -184,7 +184,7 @@ function CommandShortcut({
 }
 
 export {
-  Command,
+  CommandRoot,
   CommandDialog,
   CommandInput,
   CommandList,
@@ -192,5 +192,19 @@ export {
   CommandGroup,
   CommandItem,
   CommandShortcut,
-  CommandSeparator,
+  CommandSeparator
 }
+
+const Command = {
+  CommandRoot,
+  CommandDialog,
+  CommandInput,
+  CommandList,
+  CommandEmpty,
+  CommandGroup,
+  CommandItem,
+  CommandShortcut,
+  CommandSeparator
+}
+
+export default Command

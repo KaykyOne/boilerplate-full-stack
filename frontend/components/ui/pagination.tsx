@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { ChevronLeftIcon, ChevronRightIcon, MoreHorizontalIcon } from "lucide-react"
 
-function Pagination({ className, ...props }: React.ComponentProps<"nav">) {
+function PaginationRoot({ className, ...props }: React.ComponentProps<"nav">) {
   return (
     <nav
       role="navigation"
@@ -120,11 +120,23 @@ function PaginationEllipsis({
 }
 
 export {
-  Pagination,
+  PaginationRoot,
   PaginationContent,
   PaginationEllipsis,
   PaginationItem,
   PaginationLink,
   PaginationNext,
-  PaginationPrevious,
+  PaginationPrevious
 }
+
+const Pagination = {
+  PaginationRoot,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious
+}
+
+export default Pagination

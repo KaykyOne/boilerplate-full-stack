@@ -39,7 +39,7 @@ function useChart() {
   return context
 }
 
-function ChartContainer({
+function ChartContainerRoot({
   id,
   className,
   children,
@@ -364,10 +364,21 @@ function getPayloadConfigFromPayload(
 }
 
 export {
-  ChartContainer,
+  ChartContainerRoot,
   ChartTooltip,
   ChartTooltipContent,
   ChartLegend,
   ChartLegendContent,
-  ChartStyle,
+  ChartStyle
 }
+
+const ChartContainer = {
+  ChartContainerRoot,
+  ChartTooltip,
+  ChartTooltipContent,
+  ChartLegend,
+  ChartLegendContent,
+  ChartStyle
+}
+
+export default ChartContainer

@@ -5,7 +5,7 @@ import { RadioGroup as RadioGroupPrimitive } from "@base-ui/react/radio-group"
 
 import { cn } from "@/lib/utils"
 
-function RadioGroup({ className, ...props }: RadioGroupPrimitive.Props) {
+function RadioGroupRoot({ className, ...props }: RadioGroupPrimitive.Props) {
   return (
     <RadioGroupPrimitive
       data-slot="radio-group"
@@ -35,4 +35,14 @@ function RadioGroupItem({ className, ...props }: RadioPrimitive.Root.Props) {
   )
 }
 
-export { RadioGroup, RadioGroupItem }
+export {
+  RadioGroupRoot,
+  RadioGroupItem
+}
+
+const RadioGroup = {
+  RadioGroupRoot,
+  RadioGroupItem
+}
+
+export default RadioGroup

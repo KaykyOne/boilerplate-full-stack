@@ -22,7 +22,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { CheckIcon } from "lucide-react"
 
-function Menubar({ className, ...props }: MenubarPrimitive.Props) {
+function MenubarRoot({ className, ...props }: MenubarPrimitive.Props) {
   return (
     <MenubarPrimitive
       data-slot="menubar"
@@ -261,7 +261,7 @@ function MenubarSubContent({
 }
 
 export {
-  Menubar,
+  MenubarRoot,
   MenubarPortal,
   MenubarMenu,
   MenubarTrigger,
@@ -276,5 +276,26 @@ export {
   MenubarRadioItem,
   MenubarSub,
   MenubarSubTrigger,
-  MenubarSubContent,
+  MenubarSubContent
 }
+
+const Menubar = {
+  MenubarRoot,
+  MenubarPortal,
+  MenubarMenu,
+  MenubarTrigger,
+  MenubarContent,
+  MenubarGroup,
+  MenubarSeparator,
+  MenubarLabel,
+  MenubarItem,
+  MenubarShortcut,
+  MenubarCheckboxItem,
+  MenubarRadioGroup,
+  MenubarRadioItem,
+  MenubarSub,
+  MenubarSubTrigger,
+  MenubarSubContent
+}
+
+export default Menubar

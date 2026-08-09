@@ -5,7 +5,7 @@ import { Popover as PopoverPrimitive } from "@base-ui/react/popover"
 
 import { cn } from "@/lib/utils"
 
-function Popover({ ...props }: PopoverPrimitive.Root.Props) {
+function PopoverRoot({ ...props }: PopoverPrimitive.Root.Props) {
   return <PopoverPrimitive.Root data-slot="popover" {...props} />
 }
 
@@ -81,10 +81,21 @@ function PopoverDescription({
 }
 
 export {
-  Popover,
+  PopoverRoot,
   PopoverContent,
   PopoverDescription,
   PopoverHeader,
   PopoverTitle,
-  PopoverTrigger,
+  PopoverTrigger
 }
+
+const Popover = {
+  PopoverRoot,
+  PopoverContent,
+  PopoverDescription,
+  PopoverHeader,
+  PopoverTitle,
+  PopoverTrigger
+}
+
+export default Popover

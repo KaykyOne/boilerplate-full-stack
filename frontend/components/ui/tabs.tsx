@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
 
-function Tabs({
+function TabsRoot({
   className,
   orientation = "horizontal",
   ...props
@@ -79,4 +79,20 @@ function TabsContent({ className, ...props }: TabsPrimitive.Panel.Props) {
   )
 }
 
-export { Tabs, TabsList, TabsTrigger, TabsContent, tabsListVariants }
+export {
+  TabsRoot,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+  tabsListVariants
+}
+
+const Tabs = {
+  TabsRoot,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+  tabsListVariants
+}
+
+export default Tabs

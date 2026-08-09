@@ -17,7 +17,7 @@ function TooltipProvider({
   )
 }
 
-function Tooltip({ ...props }: TooltipPrimitive.Root.Props) {
+function TooltipRoot({ ...props }: TooltipPrimitive.Root.Props) {
   return <TooltipPrimitive.Root data-slot="tooltip" {...props} />
 }
 
@@ -63,4 +63,18 @@ function TooltipContent({
   )
 }
 
-export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider }
+export {
+  TooltipRoot,
+  TooltipTrigger,
+  TooltipContent,
+  TooltipProvider
+}
+
+const Tooltip = {
+  TooltipRoot,
+  TooltipTrigger,
+  TooltipContent,
+  TooltipProvider
+}
+
+export default Tooltip
