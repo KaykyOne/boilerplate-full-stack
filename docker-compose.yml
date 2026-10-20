@@ -1,0 +1,71 @@
+x-api: &api
+  build:
+    context: ./api
+    args:
+      APP_ENV: ${APP_ENV:-local}
+  restart: unless-stopped
+  environment: &api-env
+    APP_NAME: Laravel
+    APP_ENV: ${APP_ENV:-local}
+    APP_DEBUG: ${APP_DEBUG:-true}
+    APP_URL: http://localhost:8000
+    APP_KEY: ${APP_KEY:?Defina APP_KEY no .env (veja README)}
+    SANCTUM_STATEFUL_DOMAINS: localhost:3000,127.0.0.1:3000
+    LOG_CHANNEL: stderr
+    DB_CONNECTION: pgsql
+    DB_HOST: db
+    DB_PORT: 5432
+    DB_DATABASE: ${DB_DATABASE:-boilerplate}
+    DB_USERNAME: ${DB_USERNAME:-postgres}
+    DB_PASSWORD: ${DB_PASSWORD:-123456}
+    SESSION_DRIVER: database
+    CACHE_STORE: database
+    QUEUE_CONNECTION: database
+  volumes:
+    - api-storage:/var/www/html/storage
+  depends_on:
+    db:
+      condition: service_healthy
+
+services:
+  db:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${DB_DATABASE:-boilerplate}
+      POSTGRES_USER: ${DB_USERNAME:-postgres}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-123456}
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    <<: *api
+    command: sh -c "mkdir -p storage/framework/cache/data storage/framework/sessions storage/framework/views storage/logs && php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=8000"
+    ports:
+      - "8000:8000"
+
+  queue:
+    <<: *api
+    command: php artisan queue:work --tries=1
+    depends_on:
+      - api
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        BACKEND_URL: http://api:8000
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
+
+volumes:
+  db-data:
+  api-storage:

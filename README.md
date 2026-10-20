@@ -128,6 +128,22 @@ npm run dev
 
 O frontend ficará disponível em [http://localhost:3000](http://localhost:3000).
 
+## Docker
+
+Sobe PostgreSQL, API (com migrations automáticas), worker de filas e frontend:
+
+```bash
+cp .env.example .env
+# gere uma chave e cole em APP_KEY no .env
+echo "base64:$(openssl rand -base64 32)"
+docker compose up --build
+```
+
+- Frontend: [http://localhost:3000](http://localhost:3000)
+- API: [http://localhost:8000](http://localhost:8000)
+
+O navegador acessa apenas o frontend; `/api/*` e `/sanctum/*` são encaminhados à API pelos rewrites do Next (`BACKEND_URL` é definido no build como `http://api:8000`).
+
 ## Comandos úteis
 
 | Contexto | Comando | Descrição |
